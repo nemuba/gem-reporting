@@ -1,0 +1,26 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/**/*'
+    - 'bin/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'spec/dummy/db/schema.rb'
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+# Adicione outras configurações específicas do seu projeto abaixo
+
+plugins:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rspec_rails
